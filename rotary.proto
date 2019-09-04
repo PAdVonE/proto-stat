@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package stat.repository;
+
+import "google/protobuf/timestamp.proto";
+
+message RotaryRequest {
+    string geo = 1;
+    int32 service_id = 2;
+}
+
+message RotaryResponse {
+    repeated int32 confirm = 1;
+    repeated int32 test = 2;
+}

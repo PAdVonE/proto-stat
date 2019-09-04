@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+package stat.repository;
+
+import "google/protobuf/timestamp.proto";
+
+message ViewNewsRequest {
+    string uuid = 1;
+    string client_uuid = 2;
+    int32 service = 3;
+    int32 stream = 4;
+    int32 page_view = 5;
+    google.protobuf.Timestamp created_at = 6;
+    repeated ViewNewsElements messenger = 7;
+}
+
+message ViewNewsElements {
+    int32 id = 1;
+    int32 user_id = 4;
+    string type = 5;
+    string login = 6;
+    int32 edited_user_id = 7;
+}
+
+
+message ViewTeaserRequest {
+    string uuid = 1;
+    string client_uuid = 2;
+    int32 service = 3;
+    int32 stream = 4;
+    int32 news_id = 5;
+    int32 news_category_id = 6;
+    int32 page_view = 7;
+    google.protobuf.Timestamp created_at = 8;
+    repeated ViewTeaserElements messenger = 9;
+
+}
+
+
+message ViewTeaserElements {
+    int32 teaser_id = 1;
+    int32 teaser_category_id = 2;
+    int32 position_id = 3;
+}

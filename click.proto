@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package stat.repository;
+
+import "google/protobuf/timestamp.proto";
+
+message ClickNewsRequest {
+    string click_uuid = 1;
+    string client_uuid = 2;
+    int32 stream = 3;
+    int32 news_id = 4;
+    int32 news_category_id = 5;
+    int32 position_id = 6;
+    int32 service = 7;
+    string from = 8;
+    string to = 9;
+    int32 page_view =10;
+    google.protobuf.Timestamp created_at = 11;
+}
+
+message ClickTeaserRequest {
+    string click_uuid = 1;
+    string client_uuid = 2;
+    int32 stream = 3;
+    int32 teaser_id = 4;
+    int32 news_id = 5;
+    int32 position_id = 6;
+    int32 service = 7;
+    int32 teaser_category_id = 8;
+    int32 news_category_id = 9;
+    string from = 10;
+    string to = 11;
+    int32 page_view = 12;
+    google.protobuf.Timestamp created_at = 14;
+}
+

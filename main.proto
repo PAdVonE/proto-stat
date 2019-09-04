@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+// protoc --go_out=plugins=grpc:. *.proto
+
+package stat.repository;
+
+import "google/protobuf/empty.proto";
+
+import "client.proto";
+import "view.proto";
+import "click.proto";
+import "rotary.proto";
+
+service StatRepositoryService {
+
+    rpc CreateClient (ClientRequest) returns (google.protobuf.Empty);
+    rpc ViewNews (ViewNewsRequest) returns (google.protobuf.Empty);
+    rpc ViewTeaser (ViewTeaserRequest) returns (google.protobuf.Empty);
+    rpc ClickNews (ClickNewsRequest) returns (google.protobuf.Empty);
+    rpc ClickTeaser (ClickTeaserRequest) returns (google.protobuf.Empty);
+
+    rpc RotaryList (RotaryRequest) returns (RotaryResponse);
+
+
+}
