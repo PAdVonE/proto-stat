@@ -1,4 +1,4 @@
-module github.com/introphin/proto-user-repository
+module github.com/PAdVonE/proto-stat
 
 go 1.12
 
